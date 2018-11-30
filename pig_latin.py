@@ -1,11 +1,11 @@
-"""Pig English translation"""
+"""Pig Latin translation"""
 import re
 
 intro = '\n--> '
 
 while True:
     word = input(intro)
-    """word = re.findall(r'\w+', text)"""
+    """word = re.findall(r'\w+', text)""" # i tried to split the words from a phrase, but is returning a list and is not accepted on the next level
     
     def no_consonants(word): """ Return the word with a sufix,
 if the word has no consonants""" 
