@@ -34,11 +34,14 @@ def first_vowel(word):
 
 while True:
     intro = input(intro)
-    tokens = nltk.tokenize.RegexpTokenizer("[\\w']+|[^\\w\\s]+").tokenize(intro)
+    tokens = nltk.tokenize.RegexpTokenizer("[\\w']+|[^\\w\\s]+").tokenize(intro.lower())
     text = nltk.Text(tokens)
-    #text = [w.lower for w in text]
+    words_list = []
     for word in text:
-        result = no_consonants (word)
+        result = no_consonants(word)
         if result:
-            print(result)  
-        else: print(first_vowel(word))
+            words_list.append(result) 
+        else: 
+            words_list.append(first_vowel(word))
+    sentence = ' '.join(words_list)
+    print(sentence.capitalize())
